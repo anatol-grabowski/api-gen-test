@@ -26,8 +26,5 @@ services:
     image: curlimages/curl
     depends_on:
       - wireguard
-    # network_mode: service:wireguard
-    # entrypoint: /bin/sh -c 'echo 123 && sleep 2 && echo 45 && curl "http://10.128.0.117:8080/v2/management/user-profile-summary/user_profiles?root=content&company_uuid=7949d219-86f9-48f5-a5f8-ec7677fe39f4&only_uuids=true&requested_by=3b7fe3c9-3c28-48fd-8779-26c6b614a7e2"'
-    # entrypoint: /bin/sh -c 'echo 123 && sleep 2 && echo 45 && curl "http://wireguard/nginx.conf"'
+      - nginx
     entrypoint: /bin/sh -c 'echo 123 && sleep 1 && echo 45 && curl "http://wireguard/v2/management/user-profile-summary/user_profiles?root=content&company_uuid=7949d219-86f9-48f5-a5f8-ec7677fe39f4&only_uuids=true&requested_by=3b7fe3c9-3c28-48fd-8779-26c6b614a7e2"'
-    # entrypoint: /bin/sh -c 'echo 123 && sleep 2 && echo 45 && curl "http://wireguard/v2/management/user-profile-summary/user_profiles?root=content&company_uuid=7949d219-86f9-48f5-a5f8-ec7677fe39f4&only_uuids=true&requested_by=3b7fe3c9-3c28-48fd-8779-26c6b614a7e2"'
